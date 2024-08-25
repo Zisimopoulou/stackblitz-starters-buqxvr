@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true, // Mark as standalone
-  template: `
-    <h2>Welcome to the Home Component!</h2>
-  `,
+  templateUrl: './home.component.html', // Point to the external HTML file
+  styleUrls: ['./home.component.scss'], // Link to SCSS file
+  imports: [FooterComponent], // Import the FooterComponent here
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], // Add this schema
 })
 export class HomeComponent {}

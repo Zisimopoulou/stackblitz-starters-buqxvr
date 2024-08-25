@@ -1,0 +1,119 @@
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/
+│   │   │   ├── home.component.ts
+│   │   │   ├── home.component.html
+│   │   │   └── home.component.scss
+│   │   ├── product/
+│   │   │   ├── product.component.ts
+│   │   │   ├── product.component.html
+│   │   │   └── product.component.scss
+│   │   ├── category/
+│   │   │   ├── category.component.ts
+│   │   │   ├── category.component.html
+│   │   │   └── category.component.scss
+│   │   ├── about/
+│   │   │   ├── about.component.ts
+│   │   │   ├── about.component.html
+│   │   │   └── about.component.scss
+│   │   ├── contact/
+│   │   │   ├── contact.component.ts
+│   │   │   ├── contact.component.html
+│   │   │   └── contact.component.scss
+│   ├── shared/
+│   │   ├── header/
+│   │   │   ├── header.component.ts
+│   │   │   ├── header.component.html
+│   │   │   └── header.component.scss
+│   │   ├── footer/
+│   │   │   ├── footer.component.ts
+│   │   │   ├── footer.component.html
+│   │   │   └── footer.component.scss
+│   ├── app-routing.module.ts
+│   └── app.component.ts
+│   └── app.component.html
+│   └── app.component.scss
+├── assets/
+│   ├── images/
+│   └── styles/
+│       └── global.scss
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+├── styles.scss
+├── index.html
+└── main.ts
+
+
+home component scss 
+:root {
+    --logo-size: 20vw; /* Initial size relative to viewport width */
+    --logo-bottom: 10%; /* Distance from the bottom of the viewport */
+    --logo-left: 5%; /* Initial distance from the left edge */
+  }
+  
+  .home-container {
+    position: relative; /* Allows absolute positioning within this container */
+    height: 100vh; /* Full viewport height */
+    width: 100vw;  /* Full viewport width */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .responsive-image {
+    position: absolute; /* Position the image absolutely */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ensure image takes full viewport width */
+    height: 100vh; /* Ensure image takes full viewport height */
+    object-fit: cover; /* Cover the viewport while maintaining aspect ratio */
+  }
+
+.logo-image {
+    position: absolute;
+    bottom: 2%; /* Distance from the bottom */
+    left: -5%; /* Distance from the left edge */
+    width: 40vw; /* Initial size */
+    height: auto;
+    // background-color: rgba(255, 255, 255, 0.5); /* Background color for visibility */  background-size: 300px 100px;
+  }
+  
+  /* Media Queries for additional responsiveness */
+  @media (max-width: 1200px) {
+    .logo-image {
+      width: 12vw; /* Adjust size for smaller screens */
+      left: 6%; /* Adjust horizontal positioning for smaller screens */
+    }
+    
+    .logo-image::before {
+      width: 115%; /* Adjust background size */
+      height: 125%; /* Adjust background size */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo-image {
+      width: 10vw; /* Adjust size for mobile screens */
+      left: 8%; /* Adjust horizontal positioning for mobile screens */
+      bottom: 4%; /* Adjust bottom margin for smaller screens */
+    }
+  
+    .logo-image::before {
+      width: 120%; /* Adjust background size */
+      height: 130%; /* Adjust background size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-image {
+      width: 8vw; /* Adjust size for very small screens */
+      left: 10%; /* Adjust horizontal positioning for very small screens */
+      bottom: 6%; /* Adjust bottom margin for very small screens */
+    }
+  
+    .logo-image::before {
+      width: 125%; /* Adjust background size */
+      height: 135%; /* Adjust background size */
+    }
+  }
