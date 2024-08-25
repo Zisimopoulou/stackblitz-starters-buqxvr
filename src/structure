@@ -1,0 +1,46 @@
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/
+│   │   │   ├── home.component.ts
+│   │   │   ├── home.component.html
+│   │   │   └── home.component.scss
+│   │   ├── product/
+│   │   │   ├── product.component.ts
+│   │   │   ├── product.component.html
+│   │   │   └── product.component.scss
+│   │   ├── category/
+│   │   │   ├── category.component.ts
+│   │   │   ├── category.component.html
+│   │   │   └── category.component.scss
+│   │   ├── about/
+│   │   │   ├── about.component.ts
+│   │   │   ├── about.component.html
+│   │   │   └── about.component.scss
+│   │   ├── contact/
+│   │   │   ├── contact.component.ts
+│   │   │   ├── contact.component.html
+│   │   │   └── contact.component.scss
+│   ├── shared/
+│   │   ├── header/
+│   │   │   ├── header.component.ts
+│   │   │   ├── header.component.html
+│   │   │   └── header.component.scss
+│   │   ├── footer/
+│   │   │   ├── footer.component.ts
+│   │   │   ├── footer.component.html
+│   │   │   └── footer.component.scss
+│   ├── app-routing.module.ts
+│   └── app.component.ts
+│   └── app.component.html
+│   └── app.component.scss
+├── assets/
+│   ├── images/
+│   └── styles/
+│       └── global.scss
+├── environments/
+│   ├── environment.ts
+│   └── environment.prod.ts
+├── styles.scss
+├── index.html
+└── main.ts

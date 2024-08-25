@@ -1,0 +1,13 @@
+// Global Styles: Use global.scss for styles that apply to the entire application, such as base styles, typography, and utility classes.
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }

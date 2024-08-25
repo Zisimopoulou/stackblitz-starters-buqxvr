@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home',
   standalone: true, // Mark as standalone
-  template: `
-    <h2>Welcome to the Home Component!</h2>
-  `,
+  templateUrl: './home.component.html', // Point to the external HTML file
 })
 export class HomeComponent {}
