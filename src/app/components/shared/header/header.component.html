@@ -1,1 +1,17 @@
-<p>header works!</p>
+<header>
+    <div class="header-container">
+      <div class="menu-icon" (mouseover)="toggleMenu()" (mouseleave)="toggleMenu()">
+        <!-- This is the "three lines" icon (hamburger menu) -->
+        &#9776;
+        <ul class="dropdown-menu" *ngIf="menuOpen">
+          <li><a routerLink="/offers">Προσφορές</a></li>
+          <li><a routerLink="/category">Κατηγορίες</a></li>
+        </ul>
+      </div>
+      <div class="right-menu">
+        <a routerLink="/about">Η Εταιρεία</a>
+        <a routerLink="/contact">Επικοινωνία</a>
+      </div>
+    </div>
+  </header>
+  

@@ -1,0 +1,94 @@
+.header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; // Space between the menu icon and the right menu
+    padding: 20px;
+    z-index: 10; // Ensure header is above other content
+    background-color: rgba(255, 255, 255, 0.173); // Semi-transparent background
+    font-family: 'Roboto', serif; // Apply the font
+  
+    .menu-icon {
+      font-size: 24px; // Base size
+      cursor: pointer;
+      color: black;
+  
+      .dropdown-menu {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8); // Semi-transparent background
+        border: 1px solid #ddd;
+        padding: 10px;
+        list-style: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        display: none; // Initially hidden
+  
+        li {
+          margin: 0;
+  
+          a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+  
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.1); // Light hover effect
+            }
+          }
+        }
+      }
+    }
+  
+    .right-menu {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      
+      a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+        font-size: 18px; // Base size
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
+  // Media Queries for Responsive Font Sizes
+  @media (min-width: 375px) {
+    .menu-icon {
+      font-size: 50px;
+    }
+  
+    .right-menu a {
+      font-size: 50px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .menu-icon {
+      font-size: 40px;
+    }
+  
+    .right-menu a {
+      font-size: 40px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .menu-icon {
+      font-size: 24px;
+    }
+  
+    .right-menu a {
+      font-size: 28px;
+    }
+  }
+  
