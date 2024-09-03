@@ -1,94 +1,115 @@
 .header-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between; // Space between the menu icon and the right menu
-    padding: 20px;
-    z-index: 10; // Ensure header is above other content
-    background-color: rgba(255, 255, 255, 0.173); // Semi-transparent background
-    font-family: 'Roboto', serif; // Apply the font
-  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center;
+  padding: 20px;
+  z-index: 10; /* Ensure header is above other content */
+  background-color: rgba(255, 255, 255, 0.173); /* Semi-transparent background */
+  font-family: 'Roboto', serif; /* Apply the font */
+
+  .logo-menu-container {
+    display: flex; /* Align items horizontally */
+    align-items: center; /* Align image and menu icon vertically */
+
+    .logo-link {
+      margin-right: 10px; /* Space between the logo and menu icon */
+
+      .home-icon {
+        width: 80px; /* Larger image size */
+        height: auto;
+      }
+    }
+
     .menu-icon {
-      font-size: 24px; // Base size
+      font-size: 32px; /* Adjust size as needed */
       cursor: pointer;
       color: black;
-  
+
       .dropdown-menu {
         position: absolute;
         top: 30px;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.8); // Semi-transparent background
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
         border: 1px solid #ddd;
         padding: 10px;
         list-style: none;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        display: none; // Initially hidden
-  
+        display: none; /* Initially hidden */
+
         li {
           margin: 0;
-  
+
           a {
             color: black;
             text-decoration: none;
             display: block;
             padding: 5px 10px;
-  
+
             &:hover {
-              background-color: rgba(255, 255, 255, 0.1); // Light hover effect
+              background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
             }
           }
         }
       }
     }
-  
-    .right-menu {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      
-      a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: black;
-        font-size: 18px; // Base size
-  
-        &:hover {
-          text-decoration: underline;
-        }
+  }
+
+  .right-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px; /* Base size */
+
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
-  
-  // Media Queries for Responsive Font Sizes
-  @media (min-width: 375px) {
-    .menu-icon {
-      font-size: 50px;
-    }
-  
-    .right-menu a {
-      font-size: 50px;
-    }
+}
+
+/* Media Queries for Responsive Font Sizes */
+@media (max-width: 767px) { /* For mobile devices */
+  .header-container .logo-menu-container .logo-link .home-icon {
+    width: 60px; /* Smaller image size for mobile */
   }
-  
-  @media (min-width: 768px) {
-    .menu-icon {
-      font-size: 40px;
-    }
-  
-    .right-menu a {
-      font-size: 40px;
-    }
+  .header-container .logo-menu-container .menu-icon {
+    font-size: 24px; /* Smaller menu icon size for mobile */
   }
-  
-  @media (min-width: 1024px) {
-    .menu-icon {
-      font-size: 24px;
-    }
-  
-    .right-menu a {
-      font-size: 28px;
-    }
+  .header-container .right-menu a {
+    font-size: 16px; /* Smaller text size for right menu */
   }
-  
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { /* For tablets */
+  .header-container .logo-menu-container .logo-link .home-icon {
+    width: 80px; /* Medium image size for tablets */
+  }
+  .header-container .logo-menu-container .menu-icon {
+    font-size: 28px; /* Medium menu icon size for tablets */
+  }
+  .header-container .right-menu a {
+    font-size: 20px; /* Medium text size for right menu */
+  }
+}
+
+@media (min-width: 1024px) { /* For desktops and larger screens */
+  .header-container .logo-menu-container .logo-link .home-icon {
+    width: 100px; /* Larger image size for desktops */
+  }
+  .header-container .logo-menu-container .menu-icon {
+    font-size: 32px; /* Larger menu icon size for desktops */
+  }
+  .header-container .right-menu a {
+    font-size: 22px; /* Larger text size for right menu */
+  }
+}
+

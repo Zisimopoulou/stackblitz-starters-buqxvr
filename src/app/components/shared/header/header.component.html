@@ -1,5 +1,9 @@
 <header>
-    <div class="header-container">
+  <div class="header-container">
+    <div class="logo-menu-container">
+      <a routerLink="/" class="logo-link">
+        <img src="https://i.imgur.com/i7QKcbR.png" alt="Home" class="home-icon"/>
+      </a>
       <div class="menu-icon" (mouseover)="toggleMenu()" (mouseleave)="toggleMenu()">
         <!-- This is the "three lines" icon (hamburger menu) -->
         &#9776;
@@ -8,10 +12,11 @@
           <li><a routerLink="/category">Κατηγορίες</a></li>
         </ul>
       </div>
-      <div class="right-menu">
-        <a routerLink="/about">Η Εταιρεία</a>
-        <a routerLink="/contact">Επικοινωνία</a>
-      </div>
     </div>
-  </header>
-  <router-outlet></router-outlet>
+    <div class="right-menu">
+      <a routerLink="/about">Η Εταιρεία</a>
+      <a routerLink="/contact">Επικοινωνία</a>
+    </div>
+  </div>
+</header>
+<router-outlet></router-outlet>

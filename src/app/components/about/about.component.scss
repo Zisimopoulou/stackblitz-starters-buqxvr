@@ -1,31 +1,38 @@
-.about-container {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-  
-    h2 {
-      font-size: 1.8em;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-  
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-  
-    a {
-      color: #007bff;
-      text-decoration: none;
-  
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+.home-container {
+  display: flex; /* Use flexbox to center contents */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: relative; /* Allows absolute positioning within this container */
+  height: 100vh; /* Full viewport height */
+  width: 100vw;  /* Full viewport width */
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  margin: 0; /* Remove default margin */
+}
+
+.responsive-image {
+  position: absolute; /* Position the image absolutely */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ensure image takes full viewport width */
+  height: 100vh; /* Ensure image takes full viewport height */
+  object-fit: cover; /* Cover the viewport while maintaining aspect ratio */
+}
+
+/* Media Queries for additional responsiveness */
+@media (max-width: 1200px) {
+  .logo-image {
+    width: 90vw; /* Adjust size for smaller screens */
   }
-  
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    width: 90vw; /* Adjust size for mobile screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 90vw; /* Adjust size for very small screens */
+  }
+}
