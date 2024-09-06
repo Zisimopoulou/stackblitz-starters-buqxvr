@@ -11,8 +11,4 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   menuOpen = false; // State to track the menu visibility
-
-  toggleMenu() {
-    this.menuOpen = !this.menuOpen; // Toggle the menu visibility
-  }
 }

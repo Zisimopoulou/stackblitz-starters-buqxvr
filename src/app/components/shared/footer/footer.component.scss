@@ -1,9 +1,69 @@
-.footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  align-items: center;
+  padding: 20px;
+  z-index: 10; /* Ensure header is above other content */
+  background-color: rgba(255, 255, 255, 0.173); /* Semi-transparent background */
+  font-family: 'Roboto', serif; /* Apply the font */
+
+  .left-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      font-size: 18px; /* Base size */
+
+      &:hover {
+        text-decoration: none; /* Remove underline */
+        color: rgb(55, 55, 55); /* Change text color on hover */
+      }
+    }
   }
+}
+
+/* Media Queries for Responsive Font Sizes */
+@media (max-width: 767px) { /* For mobile devices */
+  .header-container {
+    width: 60px; /* Smaller image size for mobile */
+  }
+  .header-container {
+    font-size: 24px; /* Smaller menu icon size for mobile */
+  }
+  .header-container .left-menu a {
+    font-size: 16px; /* Smaller text size for right menu */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) { /* For tablets */
+  .header-container {
+    width: 80px; /* Medium image size for tablets */
+  }
+  .header-container {
+    font-size: 28px; /* Medium menu icon size for tablets */
+  }
+  .header-container .left-menu a {
+    font-size: 20px; /* Medium text size for right menu */
+  }
+}
+
+@media (min-width: 1024px) { /* For desktops and larger screens */
+  .header-container {
+    width: 100px; /* Larger image size for desktops */
+  }
+  .header-container {
+    font-size: 32px; /* Larger menu icon size for desktops */
+  }
+  .header-container .left-menu a {
+    font-size: 22px; /* Larger text size for right menu */
+  }
+}
+

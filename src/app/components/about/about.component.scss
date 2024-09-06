@@ -61,7 +61,7 @@
   padding: 10px 20px;
   font-size: 1.2em;
   color: white;
-  background-color: #007bff; /* Button color */
+  background-color: #87623b; /* Button color */
   border: none;
   border-radius: 8px;
   text-decoration: none;
@@ -69,6 +69,21 @@
   transition: background-color 0.3s;
 }
 
+.cta-button {
+  background-color: #87623b; /* New button color */
+}
+
 .cta-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
+  background-color: #c6823b; /* New hover color */
+}
+
+.mobile {
+  color: #cb8235; /* New button color */
+  font-weight: bold;
+  font-size: 1.3em; /* Adjust size for headings */
+  text-decoration: none; /* Remove underline */
+}
+
+.mobile:hover {
+  color: #c6823b; /* New hover color */
 }

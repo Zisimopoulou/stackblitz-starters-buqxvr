@@ -25,37 +25,118 @@
     }
 
     .menu-icon {
-      font-size: 32px; /* Adjust size as needed */
+      font-size: 32px;
       cursor: pointer;
-      color: black;
-
+      position: relative;
+    
       .dropdown-menu {
         position: absolute;
         top: 30px;
         left: 0;
-        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        background-color: rgba(48, 48, 48, 0.8); /* Semi-transparent background */
         border: 1px solid #ddd;
-        padding: 10px;
+        border-radius: 8px; /* Added rounded corners */
+        padding: 5px;
         list-style: none;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         display: none; /* Initially hidden */
-
-        li {
-          margin: 0;
-
+        z-index: 100;
+    
+        .offers-menu {
+          position: relative;
+    
           a {
-            color: black;
+            color: white;
             text-decoration: none;
+            padding: 10px 15px; /* Increase padding for better spacing */
             display: block;
-            padding: 5px 10px;
-
+            border-radius: 8px; /* Rounded corners for menu items */
+    
             &:hover {
-              background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+              background-color: rgba(48, 48, 48, 0.8); /* Semi-transparent background */
             }
+          }
+    
+          .main-categories-menu {
+            display: none; /* Hide categories initially */
+            position: absolute;
+            top: 0;
+            left: 100%; /* Position next to "Προσφορές" */
+            margin-left: 1px; /* Small offset to align borders */
+            background-color: rgba(48, 48, 48, 0.8); /* Semi-transparent background */
+            padding: 10px;
+            list-style: none;
+            min-width: 180px;
+            border: 1px solid #ddd; /* Consistent border */
+            border-radius: 8px; /* Added rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Same shadow effect */
+    
+            li {
+              padding: 5px 0; /* Adjust padding for better spacing */
+              color: white;
+    
+              a {
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding: 5px 10px;
+                border-radius: 8px; /* Rounded corners for sub-options */
+    
+                &:hover {
+                  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+                }
+              }
+    
+              &:hover > .sub-categories-menu {
+                display: block; /* Show sub-categories when hovering over main category */
+              }
+            }
+    
+            .sub-categories-menu {
+              display: none; /* Hide sub-categories initially */
+              position: absolute;
+              top: 0;
+              left: 100%; /* Position next to main category */
+              margin-left: 1px; /* Small offset to align borders */
+              background-color: rgba(0, 0, 0, 0.8);
+              padding: 10px;
+              list-style: none;
+              min-width: 180px;
+              border: 1px solid #ddd; /* Consistent border */
+              border-radius: 8px; /* Rounded corners */
+              box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Same shadow effect */
+    
+              li {
+                a {
+                  color: white;
+                  text-decoration: none;
+                  display: block;
+                  padding: 5px 10px;
+                  border-radius: 8px; /* Rounded corners for sub-options */
+    
+                  &:hover {
+                    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+                  }
+                }
+              }
+            }
+          }
+    
+          /* Show the main categories when hovering over "Προσφορές" */
+          &:hover > .main-categories-menu {
+            display: block;
           }
         }
       }
+    
+      /* Show dropdown when hovering over the menu icon */
+      &:hover > .dropdown-menu {
+        display: block;
+      }
     }
+    
+    
+    
   }
 
   .right-menu {
@@ -68,9 +149,11 @@
       text-decoration: none;
       color: black;
       font-size: 18px; /* Base size */
+      transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition */
 
       &:hover {
-        text-decoration: underline;
+        color: rgb(55, 55, 55); /* Change text color on hover */
+        text-decoration: none; /* Add underline on hover */
       }
     }
   }
