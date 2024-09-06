@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';  // Ensure you import FormsModule 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'], // Link to SCSS file
   standalone: true,
   imports: [FormsModule]  // Use imports to add FormsModule to the component
 })
