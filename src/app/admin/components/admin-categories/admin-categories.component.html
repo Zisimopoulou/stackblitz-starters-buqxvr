@@ -1,0 +1,31 @@
+<div class="categories-container">
+    <button (click)="createCategory()" class="create-category-btn">Δημιουργία Κατηγορίας</button>
+  
+    <div *ngIf="!selectedCategory && !selectedSubcategory" class="category-list">
+      <div *ngFor="let category of categories" class="category-item" 
+           (mouseenter)="showOptions(category)" 
+           (mouseleave)="hideOptions()">
+        <div class="category-name">{{ category.displayName }}</div>
+        <div class="category-options" *ngIf="category === hoveredCategory">
+          <button (click)="editCategory(category)">Επεξεργασία</button>
+          <button (click)="viewSubcategories(category)">Υποκατηγορίες</button>
+        </div>
+      </div>
+    </div>
+  
+    <div *ngIf="selectedCategory && !selectedSubcategory" class="subcategories-list">
+      <button (click)="clearSelection()">Πίσω στις κατηγορίες</button>
+      <div *ngFor="let subCategory of selectedCategory.subCategoryDtos" class="subcategory-item"
+           (click)="viewSubcategoryDetails(subCategory.id)">
+        {{ (categoryMap.get(subCategory.id)?.displayName) || 'Loading...' }}
+      </div>
+    </div>
+  
+    <div *ngIf="selectedSubcategory" class="subcategory-details">
+      <button (click)="clearSelection()">Πίσω στις κατηγορίες</button>
+      <h3>{{ selectedSubcategory.displayName }}</h3>
+      <p>Subcategory ID: {{ selectedSubcategory.id }}</p>
+      <!-- Add more subcategory details if needed -->
+    </div>
+  </div>
+  

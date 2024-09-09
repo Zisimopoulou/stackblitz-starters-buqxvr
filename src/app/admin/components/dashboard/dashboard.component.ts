@@ -11,7 +11,7 @@ export class DashboardComponent {
   constructor(private router: Router) {}
 
   goToCategories() {
-    this.router.navigate(['/admin/admin-category']);
+    this.router.navigate(['/admin/admin-categories']);
   }
 
   goToProducts() {

@@ -1,0 +1,106 @@
+.categories-container {
+  padding: 40px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-category-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.create-category-btn:hover {
+  background-color: #45a049;
+}
+
+.category-list, .subcategories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-item, .subcategory-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 5px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.category-item:hover, .subcategory-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-name, .subcategory-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.category-options, .subcategory-options {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
+.category-options button, .subcategory-options button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-options button:hover, .subcategory-options button:hover {
+  background-color: #0056b3;
+}
+
+.subcategories-list button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.subcategories-list button:hover {
+  background-color: #0056b3;
+}
+
+.subcategory-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 5px;
+  font-size: 18px; /* Match the font-size of category items */
+  font-weight: 600; /* Match the font-weight of category items */
+  color: #333; /* Match the color of category items */
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.subcategory-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
