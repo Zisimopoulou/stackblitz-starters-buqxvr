@@ -1,31 +1,30 @@
 <div class="category-form-container">
-    <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
-      <div>
-        <label for="displayName">Display Name</label>
-        <input type="text" id="displayName" [(ngModel)]="category.displayName" name="displayName" required>
-      </div>
-      
-      <div>
-        <label for="breadcrumb">Breadcrumb</label>
-        <input type="text" id="breadcrumb" [(ngModel)]="category.breadcrumb" name="breadcrumb" required>
-      </div>
-  
-      <div>
-        <label for="parentCategory">Parent Category</label>
-        <select id="parentCategory" [(ngModel)]="category.parentCategoryDto?.id" name="parentCategoryId">
-          <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.displayName }}</option>
-        </select>
-      </div>
-  
-      <div>
-        <label for="subCategories">Subcategories</label>
-        <select id="subCategories" multiple [(ngModel)]="selectedSubCategories" name="subCategoryDtos">
-          <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.displayName }}</option>
-        </select>
-      </div>
-  
-      <button type="submit">{{ isEditing ? 'Update' : 'Create' }} Category</button>
-      <button *ngIf="isEditing" type="button" (click)="onDelete()">Delete</button>
-    </form>
-  </div>
-  
+  <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
+    <div>
+      <label for="displayName">Display Name</label>
+      <input type="text" id="displayName" [(ngModel)]="category.displayName" name="displayName" required>
+    </div>
+    
+    <div>
+      <label for="breadcrumb">Breadcrumb</label>
+      <input type="text" id="breadcrumb" [(ngModel)]="category.breadcrumb" name="breadcrumb" required>
+    </div>
+ 
+    <div>
+      <label for="parentCategory">Parent Category</label>
+      <select id="parentCategory" [(ngModel)]="selectedParentCategoryId" name="parentCategoryId">
+        <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.displayName }}</option>
+      </select>
+    </div>
+ 
+    <div>
+      <label for="subCategories">Subcategories</label>
+      <select id="subCategories" multiple [(ngModel)]="selectedSubCategories" name="subCategoryDtos">
+        <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.displayName }}</option>
+      </select>
+    </div>
+ 
+    <button type="submit">{{ isEditing ? 'Update' : 'Create' }} Category</button>
+    <button *ngIf="isEditing" type="button" (click)="onDelete()">Delete</button>
+  </form>
+</div>

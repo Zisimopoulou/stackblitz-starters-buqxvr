@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 import { CategoryAdmin } from '../../../models/category-admin.model';
 
 @Component({
@@ -9,7 +11,7 @@ import { CategoryAdmin } from '../../../models/category-admin.model';
   templateUrl: './admin-create-update-category.component.html',
   styleUrls: ['./admin-create-update-category.component.scss'],
   standalone: true,
-  imports: [FormsModule] // Add FormsModule to imports
+  imports: [FormsModule, HttpClientModule, CommonModule] // Add CommonModule to imports
 })
 export class AdminCreateUpdateCategoryComponent implements OnInit {
   categories: any[] = [];
@@ -23,6 +25,7 @@ export class AdminCreateUpdateCategoryComponent implements OnInit {
     subCategoryDtos: []
   };
   selectedSubCategories: number[] = [];
+  selectedParentCategoryId: number | null = null;
   isEditing = false;
 
   constructor(
@@ -51,6 +54,7 @@ export class AdminCreateUpdateCategoryComponent implements OnInit {
   loadCategory(id: number) {
     this.http.get<CategoryAdmin>(`https://newnew.free.beeceptor.com/admin-category?id=${id}`).subscribe(data => {
       this.category = data;
+      this.selectedParentCategoryId = data.parentCategoryDto?.id ?? null;
       this.selectedSubCategories = data.subCategoryDtos.map(subCat => subCat.id);
     });
   }
@@ -58,8 +62,8 @@ export class AdminCreateUpdateCategoryComponent implements OnInit {
   onSubmit() {
     const requestBody = {
       displayName: this.category.displayName,
-      name: this.category.breadcrumb,
-      parentCategoryId: this.category.parentCategoryDto?.id, // Use parentCategoryDto's id
+      breadcrumb: this.category.breadcrumb,
+      parentCategoryId: this.selectedParentCategoryId,
       subCategoriesId: new Set(this.selectedSubCategories.map(String))
     };
 
