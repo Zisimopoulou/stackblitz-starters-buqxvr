@@ -6,14 +6,17 @@ import { AuthGuard } from '../auth.guard';
 import { AdminCategoryComponent } from './components/admin-category/admin-category.component';  // Import the standalone login component
 import { AdminCategoriesComponent } from './components/admin-categories/admin-categories.component';  // Import the standalone login component
 import { AdminProductComponent } from './components/admin-product/admin-product.component';  // Import the standalone login component
+import { AdminCreateUpdateCategoryComponent } from './components/admin-create-update-category/admin-create-update-category.component';  // Import the standalone login component
 
 const routes: Routes = [
-  { path: 'admin-categories', component: AdminCategoriesComponent },  // Route for login
-  { path: 'admin-category', component: AdminCategoryComponent },  // Route for login
-  { path: 'admin-product', component: AdminProductComponent },  // Route for login
-  { path: 'login', component: LoginComponent },  // Route for login
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },  // Protected route
-  { path: '', redirectTo: 'login', pathMatch: 'full' }  // Default route for admin module
+  { path: 'create-category', component: AdminCreateUpdateCategoryComponent },
+  { path: 'edit-category/:id', component: AdminCreateUpdateCategoryComponent },
+  { path: 'admin-categories', component: AdminCategoriesComponent },
+  { path: 'admin-category', component: AdminCategoryComponent },
+  { path: 'admin-product', component: AdminProductComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

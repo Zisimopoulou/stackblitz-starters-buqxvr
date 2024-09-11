@@ -57,8 +57,8 @@ export class AdminCategoriesComponent implements OnInit {
   }
 
   editCategory(category: CategoryAdmin) {
-    this.router.navigate(['/admin/edit-category', category.url]);
-  }
+    this.router.navigate(['/admin/edit-category', category.id]);  // Use category ID instead of URL
+  }  
 
   viewSubcategories(category: CategoryAdmin) {
     this.selectedCategory = category;
